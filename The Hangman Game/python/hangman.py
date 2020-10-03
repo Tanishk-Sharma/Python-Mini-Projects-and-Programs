@@ -5,16 +5,27 @@ from tkinter import *
 class Hangman:
 
     def __init__(self):
-        window = Tk()
+        self.main_window = Tk()
 
-        window.title("The Hangman Game")
-        window.geometry('800x500')
+        self.main_window.title("The Hangman Game")
+        self.main_window.geometry('800x500')
 
+        ## Creating components - Top to Bottom ##
+        ## Creating Frames ##
+        self.frame_misc_buttons = Frame(self.main_window)
+        self.frame_random_word = LabelFrame(self.main_window)
+        self.frame_letters = Frame(self.main_window)
+        self.frame_hangman_image = Frame(self.main_window)
+        ## Creating Buttons ##
+        self.button_new_game = Button()
+        self.button_hint = Button()
+        self.label_random_word = Label()
+        self.buttons_list_of_letters = [Button(chr(letter)) for letter in range(65, 91)]
         
+        ## Placing the Components - Frames ##
+        ## Placing the Components - Widgets inside Frames ##
 
-
-
-        window.mainloop()
+        self.main_window.mainloop()
         ########################################
         self.word_length_MIN = 4  # lower bound for word length in database
         self.word_length_MAX = 11  # upper bound for word length in database
