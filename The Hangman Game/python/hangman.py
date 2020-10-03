@@ -1,18 +1,19 @@
 import random
 import re
 
+
 class Hangman:
 
     def __init__(self):
+        self.word_length_MIN = 4  # lower bound for word length in database
+        self.word_length_MAX = 11  # upper bound for word length in database
+
         self.incorrect_attempts = 0  # Input BEFORE start of new game. Counter Variable for tracking Game Over state
         self.min_word_length = 0  # Input BEFORE start of new game. Selected word criteria
 
-        self.chosen_word = dict() # dictionary of distinct letters and their indexes
-        self.revealed_word = list() # initially a list of '*' characters, will change with correct guesses.
+        self.chosen_word = dict()  # dictionary of distinct letters and their indexes
+        self.revealed_word = list()  # initially a list of '*' characters, will change with correct guesses.
         self.previous_guesses = set()  # With each turn - show all previously guessed letter made by player
-
-        self.word_length_MIN = 4   # lower bound for word length in database
-        self.word_length_MAX = 11  # upper bound for word length in database
 
     def start_new_game(self):
         """Starts a new game of hangman and drives it till Game Over"""
@@ -43,27 +44,28 @@ class Hangman:
         while self.game_over() is not True:
 
             print(line_break)
-            
+
             self.print_word()  # Show the word
 
             # Show current status
             print(f'Attempts Remaining: {self.incorrect_attempts}')
             print(f'Previous Guesses: {self.get_previous_guesses()}')
 
-            choice = input('Choose the next letter: ').strip()  # Guessed letter by player
+            letter_choice = input('Choose the next letter: ').strip()  # Guessed letter by player
             go_ahead = False  # Boolean variable to check if ok to move to next step of game iff guessed letter is ok
-            if len(choice) == 0:
+            if len(letter_choice) == 0:
                 print('Empty input')
-            elif len(choice) > 1:
-                print(f'Multiple letters entered. Taking only the first letter: {choice[0]}')
+            elif len(letter_choice) > 1:
+                print(f'Multiple letters entered. Taking only the first letter: {letter_choice[0]}')
                 go_ahead = True
             else:
                 go_ahead = True
 
             if go_ahead:
                 self.check_if_letter_in_selected_word(
-                    choice[0])  # Check if guessed letter is in the selecting word and marking it revealed if found
-                self.add_to_previous_guesses(choice[0])  # Add the guessed letter to the set of previous_guesses
+                    letter_choice[
+                        0])  # Check if guessed letter is in the selecting word and marking it revealed if found
+                self.add_to_previous_guesses(letter_choice[0])  # Add the guessed letter to the set of previous_guesses
             won = game.did_i_win()
             if won:
                 break
@@ -80,8 +82,9 @@ class Hangman:
         while True:
             try:
                 t1 = int(input("How many incorrect attempts do you want? [1-25]: "))
-                t2 = int(input(f"What minimum word length do you want? [{self.word_length_MIN}-{self.word_length_MAX}] "))
-                if (t1 in range(1,26)) and (t2 in range(self.word_length_MIN, self.word_length_MAX+1)):
+                t2 = int(
+                    input(f"What minimum word length do you want? [{self.word_length_MIN}-{self.word_length_MAX}] "))
+                if (t1 in range(1, 26)) and (t2 in range(self.word_length_MIN, self.word_length_MAX + 1)):
                     self.incorrect_attempts = t1
                     self.min_word_length = t2
                     break
@@ -93,8 +96,10 @@ class Hangman:
 
     def selecting_word(self):
         """Selects a word from the stored list of words in text files in data directory"""
-        chosen_word_length = random.randrange(self.min_word_length, self.word_length_MAX) if self.min_word_length in range(self.word_length_MIN,
-                                                                                                                self.word_length_MAX) else self.word_length_MAX  # Choosing a random length for selecting word
+        chosen_word_length = random.randrange(self.min_word_length,
+                                              self.word_length_MAX) if self.min_word_length in range(
+            self.word_length_MIN,
+            self.word_length_MAX) else self.word_length_MAX  # Choosing a random length for selecting word
 
         text_filename_to_open = '../data/words_length_' + str(chosen_word_length) + '.txt'
         with open(text_filename_to_open, "r") as words_file:
@@ -127,7 +132,7 @@ class Hangman:
         if letter in self.chosen_word.keys():
             found = True
             indexes = self.chosen_word[letter]
-            self.chosen_word.pop(letter, 0) # removed the letter as it has been guessed now
+            self.chosen_word.pop(letter, 0)  # removed the letter as it has been guessed now
             for index in indexes:
                 self.revealed_word[index] = letter
 
