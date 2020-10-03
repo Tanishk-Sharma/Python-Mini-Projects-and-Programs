@@ -1,6 +1,7 @@
 import random
 import re
 
+# Adding a basic GUI look to the game
 
 class Hangman:
 
