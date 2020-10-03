@@ -1,11 +1,21 @@
 import random
-import re
+from tkinter import *
 
-# Adding a basic GUI look to the game
 
 class Hangman:
 
     def __init__(self):
+        window = Tk()
+
+        window.title("The Hangman Game")
+        window.geometry('800x500')
+
+        
+
+
+
+        window.mainloop()
+        ########################################
         self.word_length_MIN = 4  # lower bound for word length in database
         self.word_length_MAX = 11  # upper bound for word length in database
 
