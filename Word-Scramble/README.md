@@ -11,12 +11,13 @@ The project is to write a Python program that reads a text file, scrambles the w
 - Do this for a file and maintain sequences of lines                                                                                                                     
 - On executing the program, it should prompt the user to enter input file name and generate an output file with scrambled text.                                          
 - Output file should be named by appending the word "Scrambled" to input file name.                                                                                      
-                                                                                                                                                                         
+
+
 - The project provides a practice on following concepts to learners:                                                                                                     
                                                                                                                                                                          
-- For loops                                                                                                                                                              
-- If-else statements                                                                                                                                                     
-- String                                                                                                                                                                 
-- Lists                                                                                                                                                                  
-- Functions                                                                                                                                                              
-- File operations     
+  - For loops                                                                                                                                                              
+  - If-else statements                                                                                                                                                     
+  - String                                                                                                                                                                 
+  - Lists                                                                                                                                                                  
+  - Functions                                                                                                                                                              
+  - File operations     
