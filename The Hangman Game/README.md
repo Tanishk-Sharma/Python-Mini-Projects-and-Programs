@@ -11,23 +11,23 @@ Hangman is a game where the player:
 <table border=0>
   <tr>
     <td align="center">
-      <img src="https://user-images.githubusercontent.com/32167236/96036341-f346b700-0e81-11eb-9c7a-369b7961d9e8.png">
+      <img src="https://user-images.githubusercontent.com/32167236/96044128-97822b00-0e8d-11eb-9edc-86fd5967c094.png">
     </td>
     <td align="center">
-      <img src="https://user-images.githubusercontent.com/32167236/96036623-5a646b80-0e82-11eb-839d-5f188ffb9829.png">
+      <img src="https://user-images.githubusercontent.com/32167236/96044200-af59af00-0e8d-11eb-8eb3-44914e270f63.png">
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://user-images.githubusercontent.com/32167236/96036723-7f58de80-0e82-11eb-8daa-781017b3c9af.png">
+      <img src="https://user-images.githubusercontent.com/32167236/96044256-c8626000-0e8d-11eb-9a10-934734447491.png">
     </td>
     <td align="center">
-      <img src="https://user-images.githubusercontent.com/32167236/96036831-a44d5180-0e82-11eb-8219-95de3a88fe76.png">
+      <img src="https://user-images.githubusercontent.com/32167236/96044438-0a8ba180-0e8e-11eb-8059-d16196b09886.png">
     </td>
   </tr>
    <tr>
     <td align="center">
-      <img src="https://user-images.githubusercontent.com/32167236/96037087-fbebbd00-0e82-11eb-9bae-2cc6d49c7cda.png">
+      <img src="https://user-images.githubusercontent.com/32167236/96044333-df08b700-0e8d-11eb-9762-36e22b364424.png">
     </td>
   </tr>
 </table>
