@@ -12,22 +12,27 @@ Hangman is a game where the player:
   <tr>
     <td align="center">
       <img src="https://user-images.githubusercontent.com/32167236/96044128-97822b00-0e8d-11eb-9edc-86fd5967c094.png">
+      <figcaption>Start a new game</figcaption>
     </td>
     <td align="center">
       <img src="https://user-images.githubusercontent.com/32167236/96044200-af59af00-0e8d-11eb-8eb3-44914e270f63.png">
+      <figcaption>Word to guess is completely hidden at first</figcaption>
     </td>
   </tr>
   <tr>
     <td align="center">
       <img src="https://user-images.githubusercontent.com/32167236/96044256-c8626000-0e8d-11eb-9a10-934734447491.png">
+      <figcaption>Correctly guessed letters revealed</figcaption>
     </td>
     <td align="center">
       <img src="https://user-images.githubusercontent.com/32167236/96044438-0a8ba180-0e8e-11eb-8059-d16196b09886.png">
+      <figcaption>You WON!</figcaption>
     </td>
   </tr>
    <tr>
     <td align="center">
       <img src="https://user-images.githubusercontent.com/32167236/96044333-df08b700-0e8d-11eb-9762-36e22b364424.png">
+      <figcaption>You Lost :(</figcaption>
     </td>
   </tr>
 </table>
