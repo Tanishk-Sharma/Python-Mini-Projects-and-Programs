@@ -1,32 +1,10 @@
 import random
 from tkinter import *
-
+import math
 
 class Hangman:
 
     def __init__(self):
-        self.main_window = Tk()
-
-        self.main_window.title("The Hangman Game")
-        self.main_window.geometry('800x500')
-
-        ## Creating components - Top to Bottom ##
-        ## Creating Frames ##
-        self.frame_misc_buttons = Frame(self.main_window)
-        self.frame_random_word = LabelFrame(self.main_window)
-        self.frame_letters = Frame(self.main_window)
-        self.frame_hangman_image = Frame(self.main_window)
-        ## Creating Buttons ##
-        self.button_new_game = Button(self.frame_misc_buttons, text='New Game')
-        self.button_hint = Button(self.frame_misc_buttons, text='Hint!')
-        self.label_random_word = Label(self.frame_random_word, text='RANDOM_WORD_HERE')
-        self.buttons_list_of_letters = [Button(self.frame_letters, text=chr(letter)) for letter in range(65, 91)]
-
-        ## Placing the Components - Frames ##
-        ## Placing the Components - Widgets inside Frames ##
-
-        self.main_window.mainloop()
-        ########################################
         self.word_length_MIN = 4  # lower bound for word length in database
         self.word_length_MAX = 11  # upper bound for word length in database
 
@@ -36,6 +14,78 @@ class Hangman:
         self.chosen_word = dict()  # dictionary of distinct letters and their indexes
         self.revealed_word = list()  # initially a list of '*' characters, will change with correct guesses.
         self.previous_guesses = set()  # With each turn - show all previously guessed letter made by player
+        self.hangman_pics = ['''
+                  +
+                  |
+                  |
+                  |
+                  |
+                  |
+            =========''', '''
+               ---+
+                  |
+                  |
+                  |
+                  |
+                  |
+            =========''', '''
+              +---+
+                  |
+                  |
+                  |
+                  |
+                  |
+            =========''', '''
+              +---+
+              |   |
+                  |
+                  |
+                  |
+                  |
+            =========''', '''
+              +---+
+              |   |
+              O   |
+                  |
+                  |
+                  |
+            =========''', '''
+              +---+
+              |   |
+              O   |
+              |   |
+                  |
+                  |
+            =========''', '''
+              +---+
+              |   |
+              O   |
+             /|   |
+                  |
+                  |
+            =========''', '''
+              +---+
+              |   |
+              O   |
+             /|\  |
+                  |
+                  |
+            =========''', '''
+              +---+
+              |   |
+              O   |
+             /|\  |
+             /    |
+                  |
+            =========''', '''
+              +---+
+              |   |
+              O   |
+             /|\  |
+             / \  |
+                  |
+            =========''']
+        self.hangman_pics_jumper = 0
 
     def start_new_game(self):
         """Starts a new game of hangman and drives it till Game Over"""
@@ -73,6 +123,8 @@ class Hangman:
             print(f'Attempts Remaining: {self.incorrect_attempts}')
             print(f'Previous Guesses: {self.get_previous_guesses()}')
 
+            # Show hangman status
+            print(self.hangman_pics[self.hangman_pics_jumper])
             letter_choice = input('Choose the next letter: ').strip()  # Guessed letter by player
             go_ahead = False  # Boolean variable to check if ok to move to next step of game iff guessed letter is ok
             if len(letter_choice) == 0:
@@ -97,6 +149,7 @@ class Hangman:
             print(f"-->  {self.word}  <--\nYAYY! YOU WON !!")
         else:
             print(f"Aww! Game over!\nThe word was: {self.word}")
+            print(self.hangman_pics[-1])
         print(line_break)
 
     def set_game_parameters(self):
@@ -141,6 +194,7 @@ class Hangman:
 
     def print_word(self):
         """Displays the word's letters as per the revealed attribute of letter object"""
+        print('              ', end='')
         print(''.join(self.revealed_word))
 
     def get_previous_guesses(self):
@@ -159,6 +213,13 @@ class Hangman:
                 self.revealed_word[index] = letter
 
         if not found and letter not in self.previous_guesses:
+            # Using Newton's equations of motion to determine rate of change of jumper
+            acc = 2 *((len(self.hangman_pics)-self.hangman_pics_jumper)/self.incorrect_attempts**2)
+            v = math.sqrt(self.hangman_pics_jumper**2 + (2*acc*len(self.hangman_pics)))
+            self.hangman_pics_jumper = round(v)
+            
+            if self.hangman_pics_jumper >= len(self.hangman_pics)-2:
+                self.hangman_pics_jumper = len(self.hangman_pics) - 2
             self.incorrect_attempts -= 1
 
     def add_to_previous_guesses(self, letter):
