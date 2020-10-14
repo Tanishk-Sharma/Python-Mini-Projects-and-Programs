@@ -1,8 +1,10 @@
 # Hangman Game
 
 Hangman is a game where the player:
-* Gets limited number of turns.
 * Needs to guess the letters of the word.
+
+* Gets limited number of turns.
+
 * Gets to see the word as correctly guessed letter(s) is/are revealed.
 
 ## Words:
