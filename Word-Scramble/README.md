@@ -1,7 +1,7 @@
 # Word Scrambling                                                                                                                                                          
                                                                                                                                                                          
 ## INTRODUCTION                                                                                                                                                             
---------------                                                                                                                                                           
+                                                                                                                                                          
 The project is to write a Python program that reads a text file, scrambles the words in the file on following rules and writes the output to a new text file:            
                                                                                                                                                                          
 - Words less than or equal to 3 characters need not be scrambled                                                                                                         
