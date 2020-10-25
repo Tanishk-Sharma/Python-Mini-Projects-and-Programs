@@ -1,5 +1,7 @@
 # Hangman Game
 
+### Updated: Now using Web Scraping to fetch words!!!  
+
 Hangman is a game where the player:
 
 * Needs to guess the letters of the word.
