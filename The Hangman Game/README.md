@@ -13,27 +13,27 @@ Hangman is a game where the player:
 <table border=0>
   <tr>
     <td align="center">
-      <img src="https://user-images.githubusercontent.com/32167236/96044128-97822b00-0e8d-11eb-9edc-86fd5967c094.png"><br/>
+      <img src="https://user-images.githubusercontent.com/32167236/97106632-f5faa500-16e8-11eb-9b3e-47a97d2019ff.png"><br/>
       <b><figcaption>Fig 1: Start a new game</figcaption></b>
     </td>
     <td align="center">
-      <img src="https://user-images.githubusercontent.com/32167236/96044200-af59af00-0e8d-11eb-8eb3-44914e270f63.png"><br/>
+      <img src="https://user-images.githubusercontent.com/32167236/97106660-1591cd80-16e9-11eb-8057-6236c60d6e34.png"><br/>
       <b><figcaption>Fig 2: Word to guess is completely hidden at first</figcaption></b>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://user-images.githubusercontent.com/32167236/96044256-c8626000-0e8d-11eb-9a10-934734447491.png"><br/>
+      <img src="https://user-images.githubusercontent.com/32167236/97106690-2e9a7e80-16e9-11eb-89bd-f7c8988125f2.png"><br/>
       <b><figcaption>Fig 3: Correctly guessed letters revealed</figcaption></b>
     </td>
     <td align="center">
-      <img src="https://user-images.githubusercontent.com/32167236/96044438-0a8ba180-0e8e-11eb-8059-d16196b09886.png"><br/>
+      <img src="https://user-images.githubusercontent.com/32167236/97106706-3e19c780-16e9-11eb-86ef-580e437c8cea.png"><br/>
       <b><figcaption>Fig 4: You WON!</figcaption></b>
     </td>
   </tr>
    <tr>
     <td align="center">
-      <img src="https://user-images.githubusercontent.com/32167236/96044333-df08b700-0e8d-11eb-9762-36e22b364424.png"><br/>
+      <img src="https://user-images.githubusercontent.com/32167236/97106720-4eca3d80-16e9-11eb-9931-e9a7f89140e4.png"><br/>
       <b><figcaption>Fig 5: You Lost :(</figcaption></b>
     </td>
   </tr>
