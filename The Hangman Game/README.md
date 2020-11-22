@@ -2,6 +2,7 @@
 
 ### Updated: Now using Web Scraping to fetch words!!!  
 
+Read ful story <a href="https://tanishkblog2020.wordpress.com/2020/11/23/the-hangman-game-using-a-little-bit-of-web-scraping-and-physics/">here.</a>
 Hangman is a game where the player:
 
 * Needs to guess the letters of the word.
