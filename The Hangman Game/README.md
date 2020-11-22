@@ -40,8 +40,7 @@ Hangman is a game where the player:
 </table>
 
 ## Words:
-I just looked up common words in English and put them into a text file.
-I wrote another script to take those words and put them into order.
+We wil be applying web scraping techniques on a web page to get random word to guess!
 
 
 Key Concepts to keep in mind for this Python Project:
